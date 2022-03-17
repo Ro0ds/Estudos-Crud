@@ -83,7 +83,7 @@ SELECT id, nome, idade, nacionalidade, email, telefone, genero FROM FirstCrud WH
             <Mappings>
               <Mapping SourceColumn="id" DataSetColumn="id" />
               <Mapping SourceColumn="nome" DataSetColumn="nome" />
-              <Mapping SourceColumn="idade" DataSetColumn="idade" />
+              <Mapping SourceColumn="idade" DataSetColumn="nascimento" />
               <Mapping SourceColumn="nacionalidade" DataSetColumn="nacionalidade" />
               <Mapping SourceColumn="email" DataSetColumn="email" />
               <Mapping SourceColumn="telefone" DataSetColumn="telefone" />
@@ -99,7 +99,7 @@ SELECT id, nome, idade, nacionalidade, email, telefone, genero FROM FirstCrud WH
   <xs:element name="CRUDDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="CRUDDataSet" msprop:Generator_UserDSName="CRUDDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="FirstCrud" msprop:Generator_TableClassName="FirstCrudDataTable" msprop:Generator_TableVarName="tableFirstCrud" msprop:Generator_TablePropName="FirstCrud" msprop:Generator_RowDeletingName="FirstCrudRowDeleting" msprop:Generator_RowChangingName="FirstCrudRowChanging" msprop:Generator_RowEvHandlerName="FirstCrudRowChangeEventHandler" msprop:Generator_RowDeletedName="FirstCrudRowDeleted" msprop:Generator_UserTableName="FirstCrud" msprop:Generator_RowChangedName="FirstCrudRowChanged" msprop:Generator_RowEvArgName="FirstCrudRowChangeEvent" msprop:Generator_RowClassName="FirstCrudRow">
+        <xs:element name="FirstCrud" msprop:Generator_TableClassName="FirstCrudDataTable" msprop:Generator_TableVarName="tableFirstCrud" msprop:Generator_RowChangedName="FirstCrudRowChanged" msprop:Generator_TablePropName="FirstCrud" msprop:Generator_RowDeletingName="FirstCrudRowDeleting" msprop:Generator_RowChangingName="FirstCrudRowChanging" msprop:Generator_RowEvHandlerName="FirstCrudRowChangeEventHandler" msprop:Generator_RowDeletedName="FirstCrudRowDeleted" msprop:Generator_RowClassName="FirstCrudRow" msprop:Generator_UserTableName="FirstCrud" msprop:Generator_RowEvArgName="FirstCrudRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -110,7 +110,7 @@ SELECT id, nome, idade, nacionalidade, email, telefone, genero FROM FirstCrud WH
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="idade" msprop:Generator_ColumnVarNameInTable="columnidade" msprop:Generator_ColumnPropNameInRow="idade" msprop:Generator_ColumnPropNameInTable="idadeColumn" msprop:Generator_UserColumnName="idade" type="xs:int" minOccurs="0" />
+              <xs:element name="nascimento" msprop:Generator_ColumnVarNameInTable="columnnascimento" msprop:Generator_ColumnPropNameInRow="nascimento" msprop:Generator_ColumnPropNameInTable="nascimentoColumn" msprop:Generator_UserColumnName="nascimento" type="xs:dateTime" minOccurs="0" />
               <xs:element name="nacionalidade" msprop:Generator_ColumnVarNameInTable="columnnacionalidade" msprop:Generator_ColumnPropNameInRow="nacionalidade" msprop:Generator_ColumnPropNameInTable="nacionalidadeColumn" msprop:Generator_UserColumnName="nacionalidade" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">

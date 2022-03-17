@@ -4,7 +4,7 @@ namespace CRUD {
     class Entities {
         public int ID { get; set; }
         public string Nome { get; set; }
-        public DateTime Nascimento { get; set; }
+        public string Nascimento { get; set; }
         public string Nacionalidade { get; set; }
         public string Email { get; set; }
         public string Telefone { get; set; }
@@ -12,7 +12,7 @@ namespace CRUD {
 
         public Entities() { }
 
-        public Entities(string nome, DateTime nascimento, string nacionalidade, string email, string telefone, string genero) {
+        public Entities(string nome, string nascimento, string nacionalidade, string email, string telefone, string genero) {
             this.Nome = nome;
             this.Nascimento = nascimento;
             this.Nacionalidade = nacionalidade;

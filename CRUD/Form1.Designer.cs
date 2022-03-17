@@ -45,13 +45,16 @@ namespace CRUD {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idadeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nascimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nacionalidadeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.telefoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.generoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firstCrudTableAdapter = new CRUD.CRUDDataSetTableAdapters.FirstCrudTableAdapter();
-            this.dtNascimento = new System.Windows.Forms.DateTimePicker();
+            this.btnLimpar = new System.Windows.Forms.Button();
+            this.txtNascimento = new System.Windows.Forms.TextBox();
+            this.txtDeletar = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.firstCrudBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cRUDDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -59,7 +62,7 @@ namespace CRUD {
             // 
             // btnInserir
             // 
-            this.btnInserir.Location = new System.Drawing.Point(9, 167);
+            this.btnInserir.Location = new System.Drawing.Point(760, 61);
             this.btnInserir.Name = "btnInserir";
             this.btnInserir.Size = new System.Drawing.Size(100, 23);
             this.btnInserir.TabIndex = 7;
@@ -69,7 +72,7 @@ namespace CRUD {
             // 
             // btnAtualizar
             // 
-            this.btnAtualizar.Location = new System.Drawing.Point(9, 196);
+            this.btnAtualizar.Location = new System.Drawing.Point(760, 90);
             this.btnAtualizar.Name = "btnAtualizar";
             this.btnAtualizar.Size = new System.Drawing.Size(100, 23);
             this.btnAtualizar.TabIndex = 8;
@@ -79,20 +82,20 @@ namespace CRUD {
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(126, 167);
+            this.btnBuscar.Location = new System.Drawing.Point(760, 119);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(100, 23);
             this.btnBuscar.TabIndex = 9;
-            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.Text = "Mostrar";
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // btnExcluir
             // 
-            this.btnExcluir.Location = new System.Drawing.Point(126, 196);
+            this.btnExcluir.Location = new System.Drawing.Point(760, 180);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(100, 23);
-            this.btnExcluir.TabIndex = 10;
+            this.btnExcluir.TabIndex = 11;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = true;
             this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
@@ -100,9 +103,9 @@ namespace CRUD {
             // txtNome
             // 
             this.txtNome.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.firstCrudBindingSource, "nome", true));
-            this.txtNome.Location = new System.Drawing.Point(9, 40);
+            this.txtNome.Location = new System.Drawing.Point(9, 24);
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(100, 20);
+            this.txtNome.Size = new System.Drawing.Size(111, 20);
             this.txtNome.TabIndex = 1;
             // 
             // firstCrudBindingSource
@@ -118,15 +121,15 @@ namespace CRUD {
             // txtNacionalidade
             // 
             this.txtNacionalidade.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.firstCrudBindingSource, "nacionalidade", true));
-            this.txtNacionalidade.Location = new System.Drawing.Point(9, 124);
+            this.txtNacionalidade.Location = new System.Drawing.Point(546, 24);
             this.txtNacionalidade.Name = "txtNacionalidade";
             this.txtNacionalidade.Size = new System.Drawing.Size(100, 20);
-            this.txtNacionalidade.TabIndex = 3;
+            this.txtNacionalidade.TabIndex = 5;
             // 
             // txtGenero
             // 
             this.txtGenero.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.firstCrudBindingSource, "genero", true));
-            this.txtGenero.Location = new System.Drawing.Point(126, 124);
+            this.txtGenero.Location = new System.Drawing.Point(652, 24);
             this.txtGenero.Name = "txtGenero";
             this.txtGenero.Size = new System.Drawing.Size(100, 20);
             this.txtGenero.TabIndex = 6;
@@ -134,24 +137,24 @@ namespace CRUD {
             // txtTelefone
             // 
             this.txtTelefone.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.firstCrudBindingSource, "telefone", true));
-            this.txtTelefone.Location = new System.Drawing.Point(126, 79);
+            this.txtTelefone.Location = new System.Drawing.Point(440, 24);
             this.txtTelefone.MaxLength = 50;
             this.txtTelefone.Name = "txtTelefone";
             this.txtTelefone.Size = new System.Drawing.Size(100, 20);
-            this.txtTelefone.TabIndex = 5;
+            this.txtTelefone.TabIndex = 4;
             // 
             // txtEmail
             // 
             this.txtEmail.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.firstCrudBindingSource, "email", true));
-            this.txtEmail.Location = new System.Drawing.Point(126, 40);
+            this.txtEmail.Location = new System.Drawing.Point(126, 24);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(100, 20);
-            this.txtEmail.TabIndex = 4;
+            this.txtEmail.Size = new System.Drawing.Size(202, 20);
+            this.txtEmail.TabIndex = 2;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 24);
+            this.label1.Location = new System.Drawing.Point(6, 8);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 10;
@@ -160,7 +163,7 @@ namespace CRUD {
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 63);
+            this.label2.Location = new System.Drawing.Point(331, 8);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(63, 13);
             this.label2.TabIndex = 11;
@@ -169,7 +172,7 @@ namespace CRUD {
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 108);
+            this.label3.Location = new System.Drawing.Point(543, 8);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(75, 13);
             this.label3.TabIndex = 12;
@@ -178,7 +181,7 @@ namespace CRUD {
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(123, 24);
+            this.label4.Location = new System.Drawing.Point(123, 8);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(35, 13);
             this.label4.TabIndex = 13;
@@ -187,7 +190,7 @@ namespace CRUD {
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(123, 63);
+            this.label5.Location = new System.Drawing.Point(437, 8);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(49, 13);
             this.label5.TabIndex = 14;
@@ -196,7 +199,7 @@ namespace CRUD {
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(123, 108);
+            this.label6.Location = new System.Drawing.Point(649, 8);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(42, 13);
             this.label6.TabIndex = 15;
@@ -204,20 +207,26 @@ namespace CRUD {
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToResizeColumns = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
             this.nomeDataGridViewTextBoxColumn,
-            this.idadeDataGridViewTextBoxColumn,
+            this.nascimento,
             this.nacionalidadeDataGridViewTextBoxColumn,
             this.emailDataGridViewTextBoxColumn,
             this.telefoneDataGridViewTextBoxColumn,
             this.generoDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.firstCrudBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(259, 24);
+            this.dataGridView1.Location = new System.Drawing.Point(9, 61);
+            this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(294, 205);
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(743, 205);
             this.dataGridView1.TabIndex = 16;
             // 
             // idDataGridViewTextBoxColumn
@@ -232,24 +241,28 @@ namespace CRUD {
             this.nomeDataGridViewTextBoxColumn.DataPropertyName = "nome";
             this.nomeDataGridViewTextBoxColumn.HeaderText = "nome";
             this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
+            this.nomeDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // idadeDataGridViewTextBoxColumn
+            // nascimento
             // 
-            this.idadeDataGridViewTextBoxColumn.DataPropertyName = "idade";
-            this.idadeDataGridViewTextBoxColumn.HeaderText = "idade";
-            this.idadeDataGridViewTextBoxColumn.Name = "idadeDataGridViewTextBoxColumn";
+            this.nascimento.DataPropertyName = "nascimento";
+            this.nascimento.HeaderText = "nascimento";
+            this.nascimento.Name = "nascimento";
+            this.nascimento.ReadOnly = true;
             // 
             // nacionalidadeDataGridViewTextBoxColumn
             // 
             this.nacionalidadeDataGridViewTextBoxColumn.DataPropertyName = "nacionalidade";
             this.nacionalidadeDataGridViewTextBoxColumn.HeaderText = "nacionalidade";
             this.nacionalidadeDataGridViewTextBoxColumn.Name = "nacionalidadeDataGridViewTextBoxColumn";
+            this.nacionalidadeDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // emailDataGridViewTextBoxColumn
             // 
             this.emailDataGridViewTextBoxColumn.DataPropertyName = "email";
             this.emailDataGridViewTextBoxColumn.HeaderText = "email";
             this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            this.emailDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // telefoneDataGridViewTextBoxColumn
             // 
@@ -257,31 +270,63 @@ namespace CRUD {
             this.telefoneDataGridViewTextBoxColumn.HeaderText = "telefone";
             this.telefoneDataGridViewTextBoxColumn.MaxInputLength = 50;
             this.telefoneDataGridViewTextBoxColumn.Name = "telefoneDataGridViewTextBoxColumn";
+            this.telefoneDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // generoDataGridViewTextBoxColumn
             // 
             this.generoDataGridViewTextBoxColumn.DataPropertyName = "genero";
             this.generoDataGridViewTextBoxColumn.HeaderText = "genero";
             this.generoDataGridViewTextBoxColumn.Name = "generoDataGridViewTextBoxColumn";
+            this.generoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // firstCrudTableAdapter
             // 
             this.firstCrudTableAdapter.ClearBeforeFill = true;
             // 
-            // dtNascimento
+            // btnLimpar
             // 
-            this.dtNascimento.Location = new System.Drawing.Point(9, 79);
-            this.dtNascimento.Name = "dtNascimento";
-            this.dtNascimento.Size = new System.Drawing.Size(100, 20);
-            this.dtNascimento.TabIndex = 2;
-            this.dtNascimento.Value = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
+            this.btnLimpar.Location = new System.Drawing.Point(758, 242);
+            this.btnLimpar.Name = "btnLimpar";
+            this.btnLimpar.Size = new System.Drawing.Size(29, 24);
+            this.btnLimpar.TabIndex = 12;
+            this.btnLimpar.Text = "X";
+            this.btnLimpar.UseVisualStyleBackColor = true;
+            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
+            // 
+            // txtNascimento
+            // 
+            this.txtNascimento.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.firstCrudBindingSource, "nascimento", true));
+            this.txtNascimento.Location = new System.Drawing.Point(334, 24);
+            this.txtNascimento.MaxLength = 50;
+            this.txtNascimento.Name = "txtNascimento";
+            this.txtNascimento.Size = new System.Drawing.Size(100, 20);
+            this.txtNascimento.TabIndex = 3;
+            // 
+            // txtDeletar
+            // 
+            this.txtDeletar.Location = new System.Drawing.Point(791, 157);
+            this.txtDeletar.Name = "txtDeletar";
+            this.txtDeletar.Size = new System.Drawing.Size(69, 20);
+            this.txtDeletar.TabIndex = 10;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(766, 160);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(21, 13);
+            this.label7.TabIndex = 18;
+            this.label7.Text = "ID:";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(565, 241);
-            this.Controls.Add(this.dtNascimento);
+            this.ClientSize = new System.Drawing.Size(869, 279);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.txtDeletar);
+            this.Controls.Add(this.txtNascimento);
+            this.Controls.Add(this.btnLimpar);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -333,12 +378,15 @@ namespace CRUD {
         private CRUDDataSetTableAdapters.FirstCrudTableAdapter firstCrudTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idadeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nascimento;
         private System.Windows.Forms.DataGridViewTextBoxColumn nacionalidadeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn telefoneDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn generoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DateTimePicker dtNascimento;
+        private System.Windows.Forms.Button btnLimpar;
+        private System.Windows.Forms.TextBox txtNascimento;
+        private System.Windows.Forms.TextBox txtDeletar;
+        private System.Windows.Forms.Label label7;
     }
 }
 
