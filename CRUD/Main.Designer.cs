@@ -1,6 +1,6 @@
 ﻿
 namespace CRUD {
-    partial class Form1 {
+    partial class Main {
         /// <summary>
         /// Variável de designer necessária.
         /// </summary>
@@ -285,9 +285,9 @@ namespace CRUD {
             // 
             // btnLimpar
             // 
-            this.btnLimpar.Location = new System.Drawing.Point(758, 242);
+            this.btnLimpar.Location = new System.Drawing.Point(760, 242);
             this.btnLimpar.Name = "btnLimpar";
-            this.btnLimpar.Size = new System.Drawing.Size(29, 24);
+            this.btnLimpar.Size = new System.Drawing.Size(100, 24);
             this.btnLimpar.TabIndex = 12;
             this.btnLimpar.Text = "X";
             this.btnLimpar.UseVisualStyleBackColor = true;
@@ -318,7 +318,7 @@ namespace CRUD {
             this.label7.TabIndex = 18;
             this.label7.Text = "ID:";
             // 
-            // Form1
+            // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -343,9 +343,9 @@ namespace CRUD {
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.btnAtualizar);
             this.Controls.Add(this.btnInserir);
-            this.Name = "Form1";
+            this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "CRUD";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.firstCrudBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cRUDDataSet)).EndInit();

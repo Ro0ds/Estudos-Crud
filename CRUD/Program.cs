@@ -1,7 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using CRUD.Banco_de_Dados;
+using CRUD.Sistema_de_Login;
 using System.Windows.Forms;
 
 namespace CRUD {
@@ -13,7 +12,7 @@ namespace CRUD {
         static void Main() {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new Main());
         }
     }
 }

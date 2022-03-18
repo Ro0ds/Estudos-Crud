@@ -1,21 +1,36 @@
 ﻿using System;
+using CRUD.Banco_de_Dados;
+using CRUD.Entities;
+using CRUD.Sistema_de_Login;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using System.Configuration;
 
 namespace CRUD {
-    public partial class Form1 : Form {
-        Entities en;
-        string sqlcmd;
-        string conStr = @"Data Source=INFRA01\SQLEXPRESS;Initial Catalog = CRUD; Integrated Security = True";
+    public partial class Main : Form {
+        DatabaseInternal DBInternal;
+        DatabaseInfo DBInfo;
         SqlConnection con;
+        string sqlcmd;
 
-        public Form1() {
+        public Main() {
             InitializeComponent();
+
+            DBInfo = new DatabaseInfo();
+            DBInfo.SetarConexao($@"Data Source=LOCALHOST\SQLEXPRESS; Database = CRUD; User Id = sa; Password = Acesso@123; MultipleActiveResultSets=true;");
+
+            var config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+            var connectionStringsSection = (ConnectionStringsSection)config.GetSection("connectionStrings");
+
+            connectionStringsSection.ConnectionStrings[0].ConnectionString = "teste";
+
+            config.Save();
+            ConfigurationManager.RefreshSection("connectionStrings");
         }
 
         public void CarregaDados() {
-            en = new Entities(
+            DBInternal = new DatabaseInternal(
                     txtNome.Text,
                     txtNascimento.Text,
                     txtNacionalidade.Text,
@@ -26,8 +41,6 @@ namespace CRUD {
         }
 
         private void Form1_Load(object sender, EventArgs e) {
-            // TODO: esta linha de código carrega dados na tabela 'cRUDDataSet.FirstCrud'. Você pode movê-la ou removê-la conforme necessário.
-            //this.firstCrudTableAdapter.Fill(this.cRUDDataSet.FirstCrud);
             //birthDate = dtNascimento.Value.ToString(@"dd/MM/yyyy");
 
             try {
@@ -48,9 +61,9 @@ namespace CRUD {
                 try {
                     CarregaDados();
                     sqlcmd = $"INSERT INTO FirstCrud " +
-                        $"VALUES (\'{en.Nome}\', \'{en.Nascimento}\', \'{en.Nacionalidade}\', \'{en.Email}\', \'{en.Telefone}\', \'{en.Genero}\')";
+                        $"VALUES (\'{DBInternal.Nome}\', \'{DBInternal.Nascimento}\', \'{DBInternal.Nacionalidade}\', \'{DBInternal.Email}\', \'{DBInternal.Telefone}\', \'{DBInternal.Genero}\')";
 
-                    con = new SqlConnection(conStr);
+                    con = new SqlConnection(DBInfo.StringConexao);
 
                     SqlCommand cmd = new SqlCommand(sqlcmd, con) {
                         CommandType = CommandType.Text
@@ -73,6 +86,7 @@ namespace CRUD {
                 }
                 finally {
                     con.Close();
+
                 }
             }
         }
@@ -93,7 +107,7 @@ namespace CRUD {
                 $"where telefone = {txtTelefone.Text}";
 
             try {
-                con = new SqlConnection(conStr);
+                con = new SqlConnection(DBInfo.StringConexao);
 
                 SqlCommand cmd = new SqlCommand(sqlcmd, con) {
                     CommandType = CommandType.Text
@@ -112,6 +126,7 @@ namespace CRUD {
             }
             finally {
                 con.Close();
+                con.Dispose();
             }
         }
 
@@ -121,7 +136,7 @@ namespace CRUD {
 
             try {
                 sqlcmd = $"SELECT * FROM FirstCrud";
-                con = new SqlConnection(conStr);
+                con = new SqlConnection(DBInfo.StringConexao);
 
                 SqlCommand cmd = new SqlCommand(sqlcmd, con) {
                     CommandType = CommandType.Text
@@ -136,12 +151,14 @@ namespace CRUD {
                 }
 
                 reader.Close();
+                reader.Dispose();
             }
             catch (Exception a) {
                 MessageBox.Show(a.Message, "Erro - Buscar", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
             }
             finally {
                 con.Close();
+                con.Dispose();
             }
         }
 
@@ -149,7 +166,7 @@ namespace CRUD {
             dataGridView1.Enabled = true;
             btnInserir.Enabled = true;
             string countSQL, fixID;
-            int i;
+            int i, b;
 
             if (txtDeletar.Text == string.Empty) {
                 MessageBox.Show("Erro: campo inválido, tente novamente.", "Erro - Excluir", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
@@ -159,7 +176,7 @@ namespace CRUD {
                     sqlcmd = $"DELETE FROM FirstCrud WHERE id = {txtDeletar.Text}";
                     countSQL = $"SELECT COUNT(*) as QTDE FROM FirstCrud";
 
-                    con = new SqlConnection(conStr);
+                    con = new SqlConnection(DBInfo.StringConexao);
 
                     SqlCommand count = new SqlCommand(countSQL, con) {
                         CommandType = CommandType.Text
@@ -186,20 +203,21 @@ namespace CRUD {
                             CommandType = CommandType.Text
                         };
 
-                        i = fix.ExecuteNonQuery();
+                        b = fix.ExecuteNonQuery();
 
-                        if (i > 0) {
+                        if (b < 0) {
                             MessageBox.Show("Número de ID corrigido com sucesso!", "Exclusão", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                     }
-
                     sqlFIX.Close();
+                    sqlFIX.Dispose();
                 }
                 catch (Exception a) {
                     MessageBox.Show(a.Message, "Erro - Excluir", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
                 }
                 finally {
                     con.Close();
+                    con.Dispose();
                 }
             }
         }
