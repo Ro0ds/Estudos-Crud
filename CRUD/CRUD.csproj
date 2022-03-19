@@ -61,6 +61,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CRUDDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Entities\AppSetting.cs" />
     <Compile Include="Entities\DatabaseInfo.cs" />
     <Compile Include="Entities\DatabaseInternal.cs" />
     <Compile Include="Main.cs">

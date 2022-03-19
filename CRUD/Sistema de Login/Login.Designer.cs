@@ -33,8 +33,14 @@ namespace CRUD.Sistema_de_Login {
             this.lblEsqueceuSenha = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.menuLogin = new System.Windows.Forms.MenuStrip();
+            this.menuOP1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuCreateDB = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuSelectDB = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuDeleteDB = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.menuLogin.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtLoginUsuario
@@ -43,7 +49,7 @@ namespace CRUD.Sistema_de_Login {
             this.txtLoginUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtLoginUsuario.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Italic);
             this.txtLoginUsuario.ForeColor = System.Drawing.Color.Black;
-            this.txtLoginUsuario.Location = new System.Drawing.Point(159, 97);
+            this.txtLoginUsuario.Location = new System.Drawing.Point(159, 118);
             this.txtLoginUsuario.Name = "txtLoginUsuario";
             this.txtLoginUsuario.Size = new System.Drawing.Size(124, 23);
             this.txtLoginUsuario.TabIndex = 0;
@@ -54,7 +60,7 @@ namespace CRUD.Sistema_de_Login {
             this.txtLoginPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtLoginPassword.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Italic);
             this.txtLoginPassword.ForeColor = System.Drawing.Color.Black;
-            this.txtLoginPassword.Location = new System.Drawing.Point(159, 144);
+            this.txtLoginPassword.Location = new System.Drawing.Point(159, 165);
             this.txtLoginPassword.Name = "txtLoginPassword";
             this.txtLoginPassword.PasswordChar = '*';
             this.txtLoginPassword.Size = new System.Drawing.Size(124, 23);
@@ -63,7 +69,7 @@ namespace CRUD.Sistema_de_Login {
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Comic Sans MS", 11F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(18, 87);
+            this.label1.Location = new System.Drawing.Point(18, 108);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(135, 36);
             this.label1.TabIndex = 2;
@@ -73,7 +79,7 @@ namespace CRUD.Sistema_de_Login {
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Comic Sans MS", 11F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(18, 134);
+            this.label2.Location = new System.Drawing.Point(18, 155);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(135, 36);
             this.label2.TabIndex = 3;
@@ -83,9 +89,9 @@ namespace CRUD.Sistema_de_Login {
             // btnLoginEntrar
             // 
             this.btnLoginEntrar.Font = new System.Drawing.Font("Comic Sans MS", 8.25F);
-            this.btnLoginEntrar.Location = new System.Drawing.Point(47, 194);
+            this.btnLoginEntrar.Location = new System.Drawing.Point(42, 215);
             this.btnLoginEntrar.Name = "btnLoginEntrar";
-            this.btnLoginEntrar.Size = new System.Drawing.Size(106, 34);
+            this.btnLoginEntrar.Size = new System.Drawing.Size(102, 34);
             this.btnLoginEntrar.TabIndex = 2;
             this.btnLoginEntrar.Text = "Entrar";
             this.btnLoginEntrar.UseVisualStyleBackColor = true;
@@ -94,9 +100,9 @@ namespace CRUD.Sistema_de_Login {
             // btnLoginStatus
             // 
             this.btnLoginStatus.Font = new System.Drawing.Font("Comic Sans MS", 8.25F);
-            this.btnLoginStatus.Location = new System.Drawing.Point(159, 194);
+            this.btnLoginStatus.Location = new System.Drawing.Point(150, 215);
             this.btnLoginStatus.Name = "btnLoginStatus";
-            this.btnLoginStatus.Size = new System.Drawing.Size(106, 34);
+            this.btnLoginStatus.Size = new System.Drawing.Size(102, 34);
             this.btnLoginStatus.TabIndex = 3;
             this.btnLoginStatus.Text = "Verificar Status";
             this.btnLoginStatus.UseVisualStyleBackColor = true;
@@ -107,7 +113,7 @@ namespace CRUD.Sistema_de_Login {
             this.lblEsqueceuSenha.BackColor = System.Drawing.Color.White;
             this.lblEsqueceuSenha.Font = new System.Drawing.Font("Comic Sans MS", 7F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.lblEsqueceuSenha.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.lblEsqueceuSenha.Location = new System.Drawing.Point(12, 263);
+            this.lblEsqueceuSenha.Location = new System.Drawing.Point(12, 284);
             this.lblEsqueceuSenha.Name = "lblEsqueceuSenha";
             this.lblEsqueceuSenha.Size = new System.Drawing.Size(271, 20);
             this.lblEsqueceuSenha.TabIndex = 4;
@@ -118,7 +124,7 @@ namespace CRUD.Sistema_de_Login {
             // pictureBox2
             // 
             this.pictureBox2.Image = global::CRUD.Properties.Resources.avatar;
-            this.pictureBox2.Location = new System.Drawing.Point(115, 15);
+            this.pictureBox2.Location = new System.Drawing.Point(115, 36);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(62, 61);
             this.pictureBox2.TabIndex = 8;
@@ -129,12 +135,60 @@ namespace CRUD.Sistema_de_Login {
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pictureBox1.Image = global::CRUD.Properties.Resources.minus;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 234);
+            this.pictureBox1.Location = new System.Drawing.Point(12, 255);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(272, 26);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
+            // 
+            // menuLogin
+            // 
+            this.menuLogin.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuOP1});
+            this.menuLogin.Location = new System.Drawing.Point(0, 0);
+            this.menuLogin.Name = "menuLogin";
+            this.menuLogin.Size = new System.Drawing.Size(296, 24);
+            this.menuLogin.TabIndex = 9;
+            this.menuLogin.Text = "menuStrip1";
+            // 
+            // menuOP1
+            // 
+            this.menuOP1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuCreateDB,
+            this.menuSelectDB,
+            this.menuDeleteDB});
+            this.menuOP1.Name = "menuOP1";
+            this.menuOP1.ShortcutKeyDisplayString = "Ctrl+F1";
+            this.menuOP1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F1)));
+            this.menuOP1.Size = new System.Drawing.Size(104, 20);
+            this.menuOP1.Text = "Banco de Dados";
+            // 
+            // menuCreateDB
+            // 
+            this.menuCreateDB.Name = "menuCreateDB";
+            this.menuCreateDB.ShortcutKeyDisplayString = "F1";
+            this.menuCreateDB.ShortcutKeys = System.Windows.Forms.Keys.F1;
+            this.menuCreateDB.Size = new System.Drawing.Size(180, 22);
+            this.menuCreateDB.Text = "Criar DB";
+            this.menuCreateDB.Click += new System.EventHandler(this.menuCreateDB_Click);
+            // 
+            // menuSelectDB
+            // 
+            this.menuSelectDB.Name = "menuSelectDB";
+            this.menuSelectDB.ShortcutKeyDisplayString = "F2";
+            this.menuSelectDB.ShortcutKeys = System.Windows.Forms.Keys.F2;
+            this.menuSelectDB.Size = new System.Drawing.Size(180, 22);
+            this.menuSelectDB.Text = "Selecionar DB";
+            this.menuSelectDB.Click += new System.EventHandler(this.menuSelectDB_Click);
+            // 
+            // menuDeleteDB
+            // 
+            this.menuDeleteDB.Name = "menuDeleteDB";
+            this.menuDeleteDB.ShortcutKeyDisplayString = "F3";
+            this.menuDeleteDB.ShortcutKeys = System.Windows.Forms.Keys.F3;
+            this.menuDeleteDB.Size = new System.Drawing.Size(180, 22);
+            this.menuDeleteDB.Text = "Excluir DB";
             // 
             // Login
             // 
@@ -151,14 +205,17 @@ namespace CRUD.Sistema_de_Login {
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtLoginPassword);
             this.Controls.Add(this.txtLoginUsuario);
+            this.Controls.Add(this.menuLogin);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MainMenuStrip = this.menuLogin;
             this.MaximizeBox = false;
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
-            this.TopMost = true;
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.menuLogin.ResumeLayout(false);
+            this.menuLogin.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -175,5 +232,10 @@ namespace CRUD.Sistema_de_Login {
         private System.Windows.Forms.Button btnLoginStatus;
         private System.Windows.Forms.Label lblEsqueceuSenha;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.MenuStrip menuLogin;
+        private System.Windows.Forms.ToolStripMenuItem menuOP1;
+        private System.Windows.Forms.ToolStripMenuItem menuCreateDB;
+        private System.Windows.Forms.ToolStripMenuItem menuSelectDB;
+        private System.Windows.Forms.ToolStripMenuItem menuDeleteDB;
     }
 }

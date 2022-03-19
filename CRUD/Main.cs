@@ -12,21 +12,15 @@ namespace CRUD {
         DatabaseInternal DBInternal;
         DatabaseInfo DBInfo;
         SqlConnection con;
-        string sqlcmd;
+        string sqlcmd, conn;
+        
 
         public Main() {
             InitializeComponent();
 
-            DBInfo = new DatabaseInfo();
-            DBInfo.SetarConexao($@"Data Source=LOCALHOST\SQLEXPRESS; Database = CRUD; User Id = sa; Password = Acesso@123; MultipleActiveResultSets=true;");
-
-            var config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
-            var connectionStringsSection = (ConnectionStringsSection)config.GetSection("connectionStrings");
-
-            connectionStringsSection.ConnectionStrings[0].ConnectionString = "teste";
-
-            config.Save();
-            ConfigurationManager.RefreshSection("connectionStrings");
+            //Usar depois
+            //AppSetting cfg = new AppSetting();
+            //cfg.SaveConnectionString(cName, "teste");
         }
 
         public void CarregaDados() {
