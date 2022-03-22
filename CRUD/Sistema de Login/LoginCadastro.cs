@@ -8,9 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CRUD.Banco_de_Dados {
-    public partial class CriarBanco : Form {
-        public CriarBanco() {
+namespace CRUD.Sistema_de_Login {
+    public partial class LoginCadastro : Form {
+        public LoginCadastro() {
             InitializeComponent();
         }
     }

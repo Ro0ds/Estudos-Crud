@@ -26,7 +26,8 @@ namespace CRUD.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=INFRA01\\SQLEXPRESS;Initial Catalog=CRUD;Integrated Security=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LOCALHOST\\SQLEXPRESS; Database = CRUD; User Id = sa; Password = Acess" +
+            "o@123; MultipleActiveResultSets=true;")]
         public string CRUDConnectionString {
             get {
                 return ((string)(this["CRUDConnectionString"]));

@@ -12,6 +12,7 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <LangVersion>8.0</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -47,12 +48,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Banco de Dados\CriarBanco.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Banco de Dados\CriarBanco.Designer.cs">
-      <DependentUpon>CriarBanco.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Banco de Dados\IniFile.cs" />
+    <Compile Include="Banco de Dados\VerificacaoConfig.cs" />
     <Compile Include="CRUDDataSet.cs">
       <DependentUpon>CRUDDataSet.xsd</DependentUpon>
     </Compile>
@@ -78,9 +75,12 @@
     <Compile Include="Sistema de Login\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Banco de Dados\CriarBanco.resx">
-      <DependentUpon>CriarBanco.cs</DependentUpon>
-    </EmbeddedResource>
+    <Compile Include="Sistema de Login\LoginCadastro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sistema de Login\LoginCadastro.Designer.cs">
+      <DependentUpon>LoginCadastro.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
@@ -96,6 +96,9 @@
     </Compile>
     <EmbeddedResource Include="Sistema de Login\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sistema de Login\LoginCadastro.resx">
+      <DependentUpon>LoginCadastro.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="CRUDDataSet.xsc">
       <DependentUpon>CRUDDataSet.xsd</DependentUpon>

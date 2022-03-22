@@ -12,11 +12,16 @@ namespace CRUD {
         DatabaseInternal DBInternal;
         DatabaseInfo DBInfo;
         SqlConnection con;
+        VerificacaoConfig vConf = new VerificacaoConfig();
         string sqlcmd, conn;
-        
+
 
         public Main() {
             InitializeComponent();
+
+            vConf.VerificaIni();
+            conn = vConf.ArquivoINI.Read("StrCon");
+            DBInfo = new DatabaseInfo(conn);
 
             //Usar depois
             //AppSetting cfg = new AppSetting();
@@ -41,7 +46,7 @@ namespace CRUD {
                 CarregaDados();
             }
             catch (Exception a) {
-                MessageBox.Show(a.Message, "Erro - Inicio", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                MessageBox.Show(a.Message, "Erro | Inicio", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
             }
         }
 
@@ -49,7 +54,7 @@ namespace CRUD {
             dataGridView1.Enabled = true;
 
             if (txtNome.Text == string.Empty && txtEmail.Text == string.Empty && txtTelefone.Text == string.Empty) {
-                MessageBox.Show("Nome, e-mail ou telefone inválido, tente novamente.", "Erro - Inserir", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                MessageBox.Show("Nome, e-mail ou telefone inválido, tente novamente.", "Erro | Inserir", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
             }
             else {
                 try {
@@ -72,11 +77,11 @@ namespace CRUD {
                         btnInserir.Enabled = false;
                     }
                     else {
-                        MessageBox.Show("Erro: cadastro não realizado.", "Erro - Inserir", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                        MessageBox.Show("Erro: cadastro não realizado.", "Erro | Inserir", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
                     }
                 }
                 catch (Exception a) {
-                    MessageBox.Show(a.Message, "Erro - Inserir", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                    MessageBox.Show(a.Message, "Erro | Inserir", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
                 }
                 finally {
                     con.Close();
@@ -116,7 +121,7 @@ namespace CRUD {
                 }
             }
             catch (Exception a) {
-                MessageBox.Show(a.Message, "Erro - Atualizar", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+                MessageBox.Show(a.Message, "Erro | Atualizar", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
             }
             finally {
                 con.Close();
@@ -148,7 +153,7 @@ namespace CRUD {
                 reader.Dispose();
             }
             catch (Exception a) {
-                MessageBox.Show(a.Message, "Erro - Buscar", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+                MessageBox.Show(a.Message, "Erro | Buscar", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
             }
             finally {
                 con.Close();
@@ -163,7 +168,7 @@ namespace CRUD {
             int i, b;
 
             if (txtDeletar.Text == string.Empty) {
-                MessageBox.Show("Erro: campo inválido, tente novamente.", "Erro - Excluir", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+                MessageBox.Show("Erro: campo inválido, tente novamente.", "Erro | Excluir", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
             }
             else {
                 try {
@@ -207,7 +212,7 @@ namespace CRUD {
                     sqlFIX.Dispose();
                 }
                 catch (Exception a) {
-                    MessageBox.Show(a.Message, "Erro - Excluir", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+                    MessageBox.Show(a.Message, "Erro | Excluir", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
                 }
                 finally {
                     con.Close();

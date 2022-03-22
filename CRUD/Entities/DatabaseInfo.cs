@@ -9,7 +9,7 @@
         }
 
         public void SetarConexao(string stringConexao) {
-            StringConexao = stringConexao;
+            this.StringConexao = stringConexao;
         }
     }
 }
