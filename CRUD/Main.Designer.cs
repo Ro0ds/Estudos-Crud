@@ -107,6 +107,7 @@ namespace CRUD {
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(111, 20);
             this.txtNome.TabIndex = 1;
+            this.txtNome.Tag = "MainTXT";
             // 
             // firstCrudBindingSource
             // 
@@ -125,6 +126,7 @@ namespace CRUD {
             this.txtNacionalidade.Name = "txtNacionalidade";
             this.txtNacionalidade.Size = new System.Drawing.Size(100, 20);
             this.txtNacionalidade.TabIndex = 5;
+            this.txtNacionalidade.Tag = "MainTXT";
             // 
             // txtGenero
             // 
@@ -133,6 +135,7 @@ namespace CRUD {
             this.txtGenero.Name = "txtGenero";
             this.txtGenero.Size = new System.Drawing.Size(100, 20);
             this.txtGenero.TabIndex = 6;
+            this.txtGenero.Tag = "MainTXT";
             // 
             // txtTelefone
             // 
@@ -142,6 +145,7 @@ namespace CRUD {
             this.txtTelefone.Name = "txtTelefone";
             this.txtTelefone.Size = new System.Drawing.Size(100, 20);
             this.txtTelefone.TabIndex = 4;
+            this.txtTelefone.Tag = "MainTXT";
             // 
             // txtEmail
             // 
@@ -150,6 +154,7 @@ namespace CRUD {
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(202, 20);
             this.txtEmail.TabIndex = 2;
+            this.txtEmail.Tag = "MainTXT";
             // 
             // label1
             // 
@@ -301,6 +306,7 @@ namespace CRUD {
             this.txtNascimento.Name = "txtNascimento";
             this.txtNascimento.Size = new System.Drawing.Size(100, 20);
             this.txtNascimento.TabIndex = 3;
+            this.txtNascimento.Tag = "MainTXT";
             // 
             // txtDeletar
             // 
@@ -308,6 +314,7 @@ namespace CRUD {
             this.txtDeletar.Name = "txtDeletar";
             this.txtDeletar.Size = new System.Drawing.Size(69, 20);
             this.txtDeletar.TabIndex = 10;
+            this.txtDeletar.Tag = "";
             // 
             // label7
             // 

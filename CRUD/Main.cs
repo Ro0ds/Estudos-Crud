@@ -5,15 +5,13 @@ using CRUD.Sistema_de_Login;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
-using System.Configuration;
 
 namespace CRUD {
     public partial class Main : Form {
         DatabaseInternal DBInternal;
         DatabaseInfo DBInfo;
-        SqlConnection con;
         VerificacaoConfig vConf = new VerificacaoConfig();
-        string sqlcmd, conn;
+        string conn;
 
 
         public Main() {
@@ -22,10 +20,7 @@ namespace CRUD {
             vConf.VerificaIni();
             conn = vConf.ArquivoINI.Read("StrCon");
             DBInfo = new DatabaseInfo(conn);
-
-            //Usar depois
-            //AppSetting cfg = new AppSetting();
-            //cfg.SaveConnectionString(cName, "teste");
+            DBInfo.SetarConexao(conn);
         }
 
         public void CarregaDados() {
@@ -40,8 +35,6 @@ namespace CRUD {
         }
 
         private void Form1_Load(object sender, EventArgs e) {
-            //birthDate = dtNascimento.Value.ToString(@"dd/MM/yyyy");
-
             try {
                 CarregaDados();
             }
@@ -59,18 +52,13 @@ namespace CRUD {
             else {
                 try {
                     CarregaDados();
-                    sqlcmd = $"INSERT INTO FirstCrud " +
+
+                    DBInfo.AbrirConexão();
+
+                    DBInfo.sqlcmd = $"INSERT INTO FirstCrud " +
                         $"VALUES (\'{DBInternal.Nome}\', \'{DBInternal.Nascimento}\', \'{DBInternal.Nacionalidade}\', \'{DBInternal.Email}\', \'{DBInternal.Telefone}\', \'{DBInternal.Genero}\')";
 
-                    con = new SqlConnection(DBInfo.StringConexao);
-
-                    SqlCommand cmd = new SqlCommand(sqlcmd, con) {
-                        CommandType = CommandType.Text
-                    };
-
-                    con.Open();
-
-                    int i = cmd.ExecuteNonQuery();
+                    int i = DBInfo.cmd.ExecuteNonQuery();
 
                     if (i > 0) {
                         MessageBox.Show("Cadastro realizado com sucesso.", "Cadastro", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -84,8 +72,8 @@ namespace CRUD {
                     MessageBox.Show(a.Message, "Erro | Inserir", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
                 }
                 finally {
-                    con.Close();
-
+                    DBInfo.con.Close();
+                    DBInfo.con.Dispose();
                 }
             }
         }
@@ -95,7 +83,7 @@ namespace CRUD {
 
             CarregaDados();
 
-            sqlcmd = $"UPDATE FirstCrud " +
+            DBInfo.sqlcmd = $"UPDATE FirstCrud " +
                 $"SET " +
                 $"nome = \'{txtNome.Text}\', " +
                 $"nascimento = \'{txtNascimento.Text}\', " +
@@ -106,15 +94,9 @@ namespace CRUD {
                 $"where telefone = {txtTelefone.Text}";
 
             try {
-                con = new SqlConnection(DBInfo.StringConexao);
+                DBInfo.AbrirConexão();
 
-                SqlCommand cmd = new SqlCommand(sqlcmd, con) {
-                    CommandType = CommandType.Text
-                };
-
-                con.Open();
-
-                int i = cmd.ExecuteNonQuery();
+                int i = DBInfo.cmd.ExecuteNonQuery();
 
                 if (i > 0) {
                     MessageBox.Show("Cadastro atualizado com sucesso!", "Cadastro", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -124,8 +106,8 @@ namespace CRUD {
                 MessageBox.Show(a.Message, "Erro | Atualizar", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
             }
             finally {
-                con.Close();
-                con.Dispose();
+                DBInfo.con.Close();
+                DBInfo.con.Dispose();
             }
         }
 
@@ -134,16 +116,10 @@ namespace CRUD {
             btnInserir.Enabled = false;
 
             try {
-                sqlcmd = $"SELECT * FROM FirstCrud";
-                con = new SqlConnection(DBInfo.StringConexao);
+                DBInfo.sqlcmd = $"SELECT * FROM FirstCrud";
+                DBInfo.AbrirConexão();
 
-                SqlCommand cmd = new SqlCommand(sqlcmd, con) {
-                    CommandType = CommandType.Text
-                };
-
-                con.Open();
-
-                SqlDataReader reader = cmd.ExecuteReader();
+                SqlDataReader reader = DBInfo.cmd.ExecuteReader();
 
                 while (reader.Read()) {
                     firstCrudTableAdapter.Fill(cRUDDataSet.FirstCrud);
@@ -156,8 +132,8 @@ namespace CRUD {
                 MessageBox.Show(a.Message, "Erro | Buscar", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
             }
             finally {
-                con.Close();
-                con.Dispose();
+                DBInfo.con.Close();
+                DBInfo.con.Dispose();
             }
         }
 
@@ -172,22 +148,14 @@ namespace CRUD {
             }
             else {
                 try {
-                    sqlcmd = $"DELETE FROM FirstCrud WHERE id = {txtDeletar.Text}";
+                    DBInfo.sqlcmd = $"DELETE FROM FirstCrud WHERE id = {txtDeletar.Text}";
                     countSQL = $"SELECT COUNT(*) as QTDE FROM FirstCrud";
 
-                    con = new SqlConnection(DBInfo.StringConexao);
-
-                    SqlCommand count = new SqlCommand(countSQL, con) {
+                    SqlCommand count = new SqlCommand(countSQL, DBInfo.con) {
                         CommandType = CommandType.Text
                     };
 
-                    SqlCommand cmd = new SqlCommand(sqlcmd, con) {
-                        CommandType = CommandType.Text
-                    };
-
-                    con.Open();
-
-                    i = cmd.ExecuteNonQuery();
+                    i = DBInfo.cmd.ExecuteNonQuery();
 
                     if (i > 0) {
                         MessageBox.Show("Cadastro deletado com sucesso!", "Exclusão", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -198,7 +166,7 @@ namespace CRUD {
                     while (sqlFIX.Read()) {
                         fixID = $"DBCC CHECKIDENT ('[FirstCrud]', RESEED, {sqlFIX[0]});";
 
-                        SqlCommand fix = new SqlCommand(fixID, con) {
+                        SqlCommand fix = new SqlCommand(fixID, DBInfo.con) {
                             CommandType = CommandType.Text
                         };
 
@@ -215,8 +183,8 @@ namespace CRUD {
                     MessageBox.Show(a.Message, "Erro | Excluir", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
                 }
                 finally {
-                    con.Close();
-                    con.Dispose();
+                    DBInfo.con.Close();
+                    DBInfo.con.Dispose();
                 }
             }
         }
@@ -225,13 +193,11 @@ namespace CRUD {
             dataGridView1.Enabled = false;
             cRUDDataSet.Clear();
 
-            txtEmail.Text = string.Empty;
-            txtGenero.Text = string.Empty;
-            txtNacionalidade.Text = string.Empty;
-            txtNome.Text = string.Empty;
-            txtTelefone.Text = string.Empty;
-            txtNascimento.Text = string.Empty;
-
+            foreach (Control c in this.Controls) {
+                if (c is TextBox && c.Tag == "MainTXT" && c.Text != string.Empty) {
+                    c.Text = string.Empty;
+                }
+            }
             btnInserir.Enabled = true;
         }
     }

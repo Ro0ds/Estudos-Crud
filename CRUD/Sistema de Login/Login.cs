@@ -11,13 +11,11 @@ namespace CRUD.Sistema_de_Login {
         List<string> infos;
         DatabaseInternal DBInternal;
         DatabaseInfo DBInfo;
-        SqlConnection con;
-        SqlCommand cmd;
         SqlDataReader reader;
         VerificacaoConfig vConf = new VerificacaoConfig();
         DialogResult dg;
         readonly string cName = "CRUD.Properties.Settings.CRUDConnectionString";
-        string conn, sqlcmd;
+        string conn;
 
         /* 
          * IDENTIFICAÇÃO DOS CÓDIGOS NA LISTA
@@ -60,16 +58,6 @@ namespace CRUD.Sistema_de_Login {
                 );
         }
 
-        public void AbreConexao() {
-            con = new SqlConnection(DBInfo.StringConexao);
-
-            cmd = new SqlCommand(sqlcmd, con) {
-                CommandType = CommandType.Text
-            };
-
-            con.Open();
-        }
-
         private void Login_Load(object sender, EventArgs e) {
             CarregaDados();
         }
@@ -83,12 +71,13 @@ namespace CRUD.Sistema_de_Login {
             CarregaDados();
             infos = new List<string>();
 
-            sqlcmd = $"SELECT * FROM Login WHERE nome_usuario = '{DBInternal.LNomeUsuario}' and senha_usuario = '{DBInternal.LSenhaUsuario}'";
+            DBInfo.sqlcmd = $"SELECT * FROM Login WHERE nome_usuario = '{DBInternal.LNomeUsuario}' and senha_usuario = '{DBInternal.LSenhaUsuario}'";
 
             try {
-                AbreConexao();
+                //AbreConexao();
+                DBInfo.AbrirConexão();
 
-                reader = cmd.ExecuteReader();
+                reader = DBInfo.cmd.ExecuteReader();
 
                 while (reader.Read()) {
                     for (int i = 0; i < reader.FieldCount; i++) {
@@ -118,8 +107,8 @@ namespace CRUD.Sistema_de_Login {
                 MessageBox.Show(a.Message, "Erro | Entrar", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
             }
             finally {
-                con.Close();
-                con.Dispose();
+                DBInfo.con.Close();
+                DBInfo.con.Dispose();
             }
         }
 
@@ -132,12 +121,12 @@ namespace CRUD.Sistema_de_Login {
             CarregaDados();
             infos = new List<string>();
 
-            sqlcmd = $"SELECT * FROM Login WHERE nome_usuario = '{DBInternal.LNomeUsuario}' or senha_usuario = '{DBInternal.LSenhaUsuario}'";
+            DBInfo.sqlcmd = $"SELECT * FROM Login WHERE nome_usuario = '{DBInternal.LNomeUsuario}' or senha_usuario = '{DBInternal.LSenhaUsuario}'";
 
             try {
-                AbreConexao();
+                DBInfo.AbrirConexão();
 
-                reader = cmd.ExecuteReader();
+                reader = DBInfo.cmd.ExecuteReader();
 
                 while (reader.Read()) {
                     for (int i = 0; i < reader.FieldCount; i++) {
@@ -164,8 +153,8 @@ namespace CRUD.Sistema_de_Login {
                 MessageBox.Show(a.Message, "Erro | Status", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
             }
             finally {
-                con.Close();
-                con.Dispose();
+                DBInfo.con.Close();
+                DBInfo.con.Dispose();
             }
         }
 
@@ -178,12 +167,12 @@ namespace CRUD.Sistema_de_Login {
             CarregaDados();
             infos = new List<string>();
 
-            sqlcmd = $"SELECT * FROM Login WHERE nome_usuario = '{DBInternal.LNomeUsuario}' or senha_usuario = '{DBInternal.LSenhaUsuario}'";
+            DBInfo.sqlcmd = $"SELECT * FROM Login WHERE nome_usuario = '{DBInternal.LNomeUsuario}' or senha_usuario = '{DBInternal.LSenhaUsuario}'";
 
             try {
-                AbreConexao();
+                DBInfo.AbrirConexão();
 
-                reader = cmd.ExecuteReader();
+                reader = DBInfo.cmd.ExecuteReader();
 
                 while (reader.Read()) {
                     for (int i = 0; i < reader.FieldCount; i++) {
@@ -210,13 +199,15 @@ namespace CRUD.Sistema_de_Login {
                 MessageBox.Show(a.Message, "Erro | Dica", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
             }
             finally {
-                con.Close();
-                con.Dispose();
+                DBInfo.con.Close();
+                DBInfo.con.Dispose();
             }
         }
 
         private void btnCriarConta_Click(object sender, EventArgs e) {
-
+            LoginCadastro lc = new LoginCadastro();
+            lc.Show();
+            lc.TopMost = true;
         }
 
         private void lblEsqueceuSenha_Click(object sender, EventArgs e) {

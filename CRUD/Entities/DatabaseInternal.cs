@@ -34,17 +34,17 @@ namespace CRUD {
         }
 
         public DatabaseInternal(int lID, string lNome, string lNomeUsuario, string lSenhaUsuario, string lEmailUsuario, string lDicaSenhaUsuario, string lStatusUsuario) {
-            LID = lID;
-            LNome = lNome;
-            LNomeUsuario = lNomeUsuario;
-            LSenhaUsuario = lSenhaUsuario;
-            LEmailUsuario = lEmailUsuario;
+            LID =               lID;
+            LNome =             lNome;
+            LNomeUsuario =      lNomeUsuario;
+            LSenhaUsuario =     lSenhaUsuario;
+            LEmailUsuario =     lEmailUsuario;
             LDicaSenhaUsuario = lDicaSenhaUsuario;
-            LStatusUsuario = lStatusUsuario;
+            LStatusUsuario =    lStatusUsuario;
         }
 
         public DatabaseInternal(string lNomeUsuario, string lSenhaUsuario) {
-            LNomeUsuario = lNomeUsuario;
+            LNomeUsuario =  lNomeUsuario;
             LSenhaUsuario = lSenhaUsuario;
         }
 
