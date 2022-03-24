@@ -21,7 +21,7 @@ namespace CRUD.Sistema_de_Login {
                     MessageBox.Show("Preencha os campos corretamente", "Erro | Login Cadastro", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
                     break;
                 }
-                else if (c is TextBox && c.Tag == "CadastroTXT" && c.Text != string.Empty) {
+                else if (c is TextBox && c.Tag == "CadastroTXT" && c.Text != string.Empty) { 
 
                 }
             }
