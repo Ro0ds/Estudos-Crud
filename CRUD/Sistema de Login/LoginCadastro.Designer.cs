@@ -37,6 +37,8 @@ namespace CRUD.Sistema_de_Login {
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnRegisterLogin = new System.Windows.Forms.Button();
             this.btnLimparRegistro = new System.Windows.Forms.Button();
+            this.chkAtivo = new System.Windows.Forms.CheckBox();
+            this.chkInativo = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -122,6 +124,7 @@ namespace CRUD.Sistema_de_Login {
             this.txtCadastroSenha.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtCadastroSenha.Location = new System.Drawing.Point(109, 131);
             this.txtCadastroSenha.Name = "txtCadastroSenha";
+            this.txtCadastroSenha.PasswordChar = '*';
             this.txtCadastroSenha.Size = new System.Drawing.Size(149, 20);
             this.txtCadastroSenha.TabIndex = 3;
             this.txtCadastroSenha.Tag = "CadastroTXT";
@@ -146,7 +149,7 @@ namespace CRUD.Sistema_de_Login {
             // 
             // btnRegisterLogin
             // 
-            this.btnRegisterLogin.Location = new System.Drawing.Point(58, 236);
+            this.btnRegisterLogin.Location = new System.Drawing.Point(51, 254);
             this.btnRegisterLogin.Name = "btnRegisterLogin";
             this.btnRegisterLogin.Size = new System.Drawing.Size(79, 30);
             this.btnRegisterLogin.TabIndex = 6;
@@ -156,7 +159,7 @@ namespace CRUD.Sistema_de_Login {
             // 
             // btnLimparRegistro
             // 
-            this.btnLimparRegistro.Location = new System.Drawing.Point(155, 236);
+            this.btnLimparRegistro.Location = new System.Drawing.Point(148, 254);
             this.btnLimparRegistro.Name = "btnLimparRegistro";
             this.btnLimparRegistro.Size = new System.Drawing.Size(79, 30);
             this.btnLimparRegistro.TabIndex = 7;
@@ -164,12 +167,36 @@ namespace CRUD.Sistema_de_Login {
             this.btnLimparRegistro.UseVisualStyleBackColor = true;
             this.btnLimparRegistro.Click += new System.EventHandler(this.btnLimparRegistro_Click);
             // 
+            // chkAtivo
+            // 
+            this.chkAtivo.AutoSize = true;
+            this.chkAtivo.Checked = true;
+            this.chkAtivo.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkAtivo.Location = new System.Drawing.Point(82, 228);
+            this.chkAtivo.Name = "chkAtivo";
+            this.chkAtivo.Size = new System.Drawing.Size(50, 17);
+            this.chkAtivo.TabIndex = 11;
+            this.chkAtivo.Text = "Ativo";
+            this.chkAtivo.UseVisualStyleBackColor = true;
+            // 
+            // chkInativo
+            // 
+            this.chkInativo.AutoSize = true;
+            this.chkInativo.Location = new System.Drawing.Point(150, 228);
+            this.chkInativo.Name = "chkInativo";
+            this.chkInativo.Size = new System.Drawing.Size(58, 17);
+            this.chkInativo.TabIndex = 12;
+            this.chkInativo.Text = "Inativo";
+            this.chkInativo.UseVisualStyleBackColor = true;
+            // 
             // LoginCadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(280, 290);
+            this.ClientSize = new System.Drawing.Size(274, 290);
+            this.Controls.Add(this.chkInativo);
+            this.Controls.Add(this.chkAtivo);
             this.Controls.Add(this.btnLimparRegistro);
             this.Controls.Add(this.btnRegisterLogin);
             this.Controls.Add(this.pictureBox1);
@@ -188,6 +215,7 @@ namespace CRUD.Sistema_de_Login {
             this.Name = "LoginCadastro";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login Cadastro";
+            this.Load += new System.EventHandler(this.LoginCadastro_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -209,5 +237,7 @@ namespace CRUD.Sistema_de_Login {
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnRegisterLogin;
         private System.Windows.Forms.Button btnLimparRegistro;
+        private System.Windows.Forms.CheckBox chkAtivo;
+        private System.Windows.Forms.CheckBox chkInativo;
     }
 }

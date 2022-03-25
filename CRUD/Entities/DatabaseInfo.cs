@@ -17,17 +17,17 @@ namespace CRUD.Entities {
         }
 
         public void SetarConexao(string stringConexao) {
-            this.StringConexao = stringConexao;
+            StringConexao = stringConexao;
         }
 
         public void AbrirConexão() {
-            this.con = new SqlConnection(this.StringConexao);
+            con = new SqlConnection(StringConexao);
 
-            this.cmd = new SqlCommand(this.sqlcmd, this.con) {
+            cmd = new SqlCommand(sqlcmd, con) {
                 CommandType = CommandType.Text
             };
 
-            this.con.Open();
+            con.Open();
         }
     }
 }

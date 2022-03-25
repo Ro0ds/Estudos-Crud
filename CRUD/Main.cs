@@ -56,7 +56,7 @@ namespace CRUD {
                     DBInfo.AbrirConexão();
 
                     DBInfo.sqlcmd = $"INSERT INTO FirstCrud " +
-                        $"VALUES (\'{DBInternal.Nome}\', \'{DBInternal.Nascimento}\', \'{DBInternal.Nacionalidade}\', \'{DBInternal.Email}\', \'{DBInternal.Telefone}\', \'{DBInternal.Genero}\')";
+                        $"VALUES (\'{DBInternal.CNome}\', \'{DBInternal.CNascimento}\', \'{DBInternal.CNacionalidade}\', \'{DBInternal.CEmail}\', \'{DBInternal.CTelefone}\', \'{DBInternal.CGenero}\')";
 
                     int i = DBInfo.cmd.ExecuteNonQuery();
 
@@ -194,7 +194,7 @@ namespace CRUD {
             cRUDDataSet.Clear();
 
             foreach (Control c in this.Controls) {
-                if (c is TextBox && c.Tag == "MainTXT" && c.Text != string.Empty) {
+                if (c is TextBox && c.Tag.ToString() == "MainTXT" && c.Text != string.Empty) {
                     c.Text = string.Empty;
                 }
             }

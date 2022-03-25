@@ -48,7 +48,7 @@ namespace CRUD.Sistema_de_Login {
             this.txtLoginUsuario.Location = new System.Drawing.Point(159, 93);
             this.txtLoginUsuario.Name = "txtLoginUsuario";
             this.txtLoginUsuario.Size = new System.Drawing.Size(124, 23);
-            this.txtLoginUsuario.TabIndex = 0;
+            this.txtLoginUsuario.TabIndex = 1;
             // 
             // txtLoginPassword
             // 
@@ -60,7 +60,7 @@ namespace CRUD.Sistema_de_Login {
             this.txtLoginPassword.Name = "txtLoginPassword";
             this.txtLoginPassword.PasswordChar = '*';
             this.txtLoginPassword.Size = new System.Drawing.Size(124, 23);
-            this.txtLoginPassword.TabIndex = 1;
+            this.txtLoginPassword.TabIndex = 2;
             // 
             // label1
             // 
@@ -88,7 +88,7 @@ namespace CRUD.Sistema_de_Login {
             this.btnLoginEntrar.Location = new System.Drawing.Point(13, 180);
             this.btnLoginEntrar.Name = "btnLoginEntrar";
             this.btnLoginEntrar.Size = new System.Drawing.Size(68, 44);
-            this.btnLoginEntrar.TabIndex = 2;
+            this.btnLoginEntrar.TabIndex = 3;
             this.btnLoginEntrar.Text = "Entrar";
             this.btnLoginEntrar.UseVisualStyleBackColor = true;
             this.btnLoginEntrar.Click += new System.EventHandler(this.btnLoginEntrar_Click);
@@ -99,7 +99,7 @@ namespace CRUD.Sistema_de_Login {
             this.btnLoginStatus.Location = new System.Drawing.Point(161, 180);
             this.btnLoginStatus.Name = "btnLoginStatus";
             this.btnLoginStatus.Size = new System.Drawing.Size(68, 44);
-            this.btnLoginStatus.TabIndex = 3;
+            this.btnLoginStatus.TabIndex = 5;
             this.btnLoginStatus.Text = "Verificar Status";
             this.btnLoginStatus.UseVisualStyleBackColor = true;
             this.btnLoginStatus.Click += new System.EventHandler(this.btnLoginStatus_Click);
@@ -112,7 +112,7 @@ namespace CRUD.Sistema_de_Login {
             this.lblEsqueceuSenha.Location = new System.Drawing.Point(13, 259);
             this.lblEsqueceuSenha.Name = "lblEsqueceuSenha";
             this.lblEsqueceuSenha.Size = new System.Drawing.Size(290, 20);
-            this.lblEsqueceuSenha.TabIndex = 4;
+            this.lblEsqueceuSenha.TabIndex = 7;
             this.lblEsqueceuSenha.Text = "Esqueceu a senha?";
             this.lblEsqueceuSenha.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblEsqueceuSenha.Click += new System.EventHandler(this.lblEsqueceuSenha_Click);
@@ -144,7 +144,7 @@ namespace CRUD.Sistema_de_Login {
             this.btnLoginDica.Location = new System.Drawing.Point(235, 180);
             this.btnLoginDica.Name = "btnLoginDica";
             this.btnLoginDica.Size = new System.Drawing.Size(68, 44);
-            this.btnLoginDica.TabIndex = 9;
+            this.btnLoginDica.TabIndex = 6;
             this.btnLoginDica.Text = "Dica senha";
             this.btnLoginDica.UseVisualStyleBackColor = true;
             this.btnLoginDica.Click += new System.EventHandler(this.btnLoginDica_Click);
@@ -155,7 +155,7 @@ namespace CRUD.Sistema_de_Login {
             this.btnCriarConta.Location = new System.Drawing.Point(87, 180);
             this.btnCriarConta.Name = "btnCriarConta";
             this.btnCriarConta.Size = new System.Drawing.Size(68, 44);
-            this.btnCriarConta.TabIndex = 10;
+            this.btnCriarConta.TabIndex = 4;
             this.btnCriarConta.Text = "Criar conta";
             this.btnCriarConta.UseVisualStyleBackColor = true;
             this.btnCriarConta.Click += new System.EventHandler(this.btnCriarConta_Click);

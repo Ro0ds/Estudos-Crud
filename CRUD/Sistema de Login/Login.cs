@@ -207,7 +207,7 @@ namespace CRUD.Sistema_de_Login {
         private void btnCriarConta_Click(object sender, EventArgs e) {
             LoginCadastro lc = new LoginCadastro();
             lc.Show();
-            lc.TopMost = true;
+            lc.TopMost = false;
         }
 
         private void lblEsqueceuSenha_Click(object sender, EventArgs e) {
