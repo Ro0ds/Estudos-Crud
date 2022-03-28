@@ -9,6 +9,7 @@ namespace CRUD.Email {
     class EmailSender {
         public string DestinatarioNome { get; private set; }
         public string DestinatarioEmail { get; private set; }
+        public string CodigoSecreto { get; private set; }
         public MailAddress DoEmail { get; set; }
         public MailAddress ParaEmail { get; private set; }
         public MailMessage MensagemEmail { get; private set; }
@@ -56,7 +57,7 @@ namespace CRUD.Email {
                 }
             };
 
-            cr.GerarCodigoSeguranca();
+            CodigoSecreto = cr.GerarCodigoSeguranca();
 
             DoEmail = new MailAddress("contacrud@gmail.com", "Verificação");
             ParaEmail = new MailAddress(DestinatarioEmail, DestinatarioNome);

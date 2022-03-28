@@ -54,7 +54,7 @@ namespace CRUD.Sistema_de_Login {
         }
 
         private void btnVerificaRecupera_Click(object sender, EventArgs e) {
-            if(txtCodigoRecupera.Text == cr.CodigoSecreto) {
+            if(txtCodigoRecupera.Text == es.CodigoSecreto) {
                 TempoParaRecuperar.Stop();
                 MessageBox.Show("Código correto, você será redirecionado para a tela de recuperação!", "Aviso | Recupera Senha", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
             }

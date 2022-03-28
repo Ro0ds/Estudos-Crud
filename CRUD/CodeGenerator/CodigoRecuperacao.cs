@@ -16,7 +16,7 @@ namespace CRUD.CodeGenerator {
             Nome = nome;
         }
 
-        public void GerarCodigoSeguranca() {
+        public string GerarCodigoSeguranca() {
             CodigoSecreto = string.Empty;
             char[] alfabeto = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".ToCharArray();
 
@@ -25,6 +25,8 @@ namespace CRUD.CodeGenerator {
             for (int i = 0; i <= 10; i++) {
                 CodigoSecreto += alfabeto[rng.Next(26)].ToString() + rng.Next(99);
             }
+
+            return CodigoSecreto;
         }
 
         public override string ToString() {
