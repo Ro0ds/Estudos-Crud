@@ -43,28 +43,28 @@ namespace CRUD.Sistema_de_Login {
             // 
             this.txtLoginUsuario.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtLoginUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtLoginUsuario.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Italic);
+            this.txtLoginUsuario.Font = new System.Drawing.Font("Arial", 8.25F);
             this.txtLoginUsuario.ForeColor = System.Drawing.Color.Black;
             this.txtLoginUsuario.Location = new System.Drawing.Point(159, 93);
             this.txtLoginUsuario.Name = "txtLoginUsuario";
-            this.txtLoginUsuario.Size = new System.Drawing.Size(124, 23);
+            this.txtLoginUsuario.Size = new System.Drawing.Size(124, 20);
             this.txtLoginUsuario.TabIndex = 1;
             // 
             // txtLoginPassword
             // 
             this.txtLoginPassword.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtLoginPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtLoginPassword.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Italic);
+            this.txtLoginPassword.Font = new System.Drawing.Font("Arial", 8.25F);
             this.txtLoginPassword.ForeColor = System.Drawing.Color.Black;
             this.txtLoginPassword.Location = new System.Drawing.Point(159, 140);
             this.txtLoginPassword.Name = "txtLoginPassword";
             this.txtLoginPassword.PasswordChar = '*';
-            this.txtLoginPassword.Size = new System.Drawing.Size(124, 23);
+            this.txtLoginPassword.Size = new System.Drawing.Size(124, 20);
             this.txtLoginPassword.TabIndex = 2;
             // 
             // label1
             // 
-            this.label1.Font = new System.Drawing.Font("Comic Sans MS", 11F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Arial", 8.25F);
             this.label1.Location = new System.Drawing.Point(18, 83);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(135, 36);
@@ -74,7 +74,7 @@ namespace CRUD.Sistema_de_Login {
             // 
             // label2
             // 
-            this.label2.Font = new System.Drawing.Font("Comic Sans MS", 11F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Arial", 8.25F);
             this.label2.Location = new System.Drawing.Point(18, 130);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(135, 36);
@@ -84,7 +84,7 @@ namespace CRUD.Sistema_de_Login {
             // 
             // btnLoginEntrar
             // 
-            this.btnLoginEntrar.Font = new System.Drawing.Font("Comic Sans MS", 8.25F);
+            this.btnLoginEntrar.Font = new System.Drawing.Font("Arial", 8.25F);
             this.btnLoginEntrar.Location = new System.Drawing.Point(13, 180);
             this.btnLoginEntrar.Name = "btnLoginEntrar";
             this.btnLoginEntrar.Size = new System.Drawing.Size(68, 44);
@@ -95,7 +95,7 @@ namespace CRUD.Sistema_de_Login {
             // 
             // btnLoginStatus
             // 
-            this.btnLoginStatus.Font = new System.Drawing.Font("Comic Sans MS", 8.25F);
+            this.btnLoginStatus.Font = new System.Drawing.Font("Arial", 8.25F);
             this.btnLoginStatus.Location = new System.Drawing.Point(161, 180);
             this.btnLoginStatus.Name = "btnLoginStatus";
             this.btnLoginStatus.Size = new System.Drawing.Size(68, 44);
@@ -107,7 +107,7 @@ namespace CRUD.Sistema_de_Login {
             // lblEsqueceuSenha
             // 
             this.lblEsqueceuSenha.BackColor = System.Drawing.Color.White;
-            this.lblEsqueceuSenha.Font = new System.Drawing.Font("Comic Sans MS", 7F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.lblEsqueceuSenha.Font = new System.Drawing.Font("Arial", 8.25F);
             this.lblEsqueceuSenha.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.lblEsqueceuSenha.Location = new System.Drawing.Point(13, 259);
             this.lblEsqueceuSenha.Name = "lblEsqueceuSenha";
@@ -140,7 +140,7 @@ namespace CRUD.Sistema_de_Login {
             // 
             // btnLoginDica
             // 
-            this.btnLoginDica.Font = new System.Drawing.Font("Comic Sans MS", 8.25F);
+            this.btnLoginDica.Font = new System.Drawing.Font("Arial", 8.25F);
             this.btnLoginDica.Location = new System.Drawing.Point(235, 180);
             this.btnLoginDica.Name = "btnLoginDica";
             this.btnLoginDica.Size = new System.Drawing.Size(68, 44);
@@ -151,7 +151,7 @@ namespace CRUD.Sistema_de_Login {
             // 
             // btnCriarConta
             // 
-            this.btnCriarConta.Font = new System.Drawing.Font("Comic Sans MS", 8.25F);
+            this.btnCriarConta.Font = new System.Drawing.Font("Arial", 8.25F);
             this.btnCriarConta.Location = new System.Drawing.Point(87, 180);
             this.btnCriarConta.Name = "btnCriarConta";
             this.btnCriarConta.Size = new System.Drawing.Size(68, 44);

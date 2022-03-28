@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Data;
 using System.Data.SqlClient;
 using CRUD.Banco_de_Dados;
 using CRUD.Entities;
@@ -211,7 +210,8 @@ namespace CRUD.Sistema_de_Login {
         }
 
         private void lblEsqueceuSenha_Click(object sender, EventArgs e) {
-
+            SenhaRecuperacao SR = new SenhaRecuperacao();
+            SR.Show();
         }
     }
 }

@@ -50,6 +50,7 @@
   <ItemGroup>
     <Compile Include="Banco de Dados\IniFile.cs" />
     <Compile Include="Banco de Dados\VerificacaoConfig.cs" />
+    <Compile Include="CodeGenerator\CodigoRecuperacao.cs" />
     <Compile Include="CRUDDataSet.cs">
       <DependentUpon>CRUDDataSet.xsd</DependentUpon>
     </Compile>
@@ -58,6 +59,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CRUDDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Email\EmailSender.cs" />
     <Compile Include="Entities\AppSetting.cs" />
     <Compile Include="Entities\DatabaseInfo.cs" />
     <Compile Include="Entities\DatabaseInternal.cs" />
@@ -81,6 +83,12 @@
     <Compile Include="Sistema de Login\LoginCadastro.Designer.cs">
       <DependentUpon>LoginCadastro.cs</DependentUpon>
     </Compile>
+    <Compile Include="Sistema de Login\SenhaRecuperacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sistema de Login\SenhaRecuperacao.Designer.cs">
+      <DependentUpon>SenhaRecuperacao.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
@@ -99,6 +107,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Sistema de Login\LoginCadastro.resx">
       <DependentUpon>LoginCadastro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sistema de Login\SenhaRecuperacao.resx">
+      <DependentUpon>SenhaRecuperacao.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="CRUDDataSet.xsc">
       <DependentUpon>CRUDDataSet.xsd</DependentUpon>
@@ -133,5 +144,6 @@
   <ItemGroup>
     <None Include="Sistema de Login\register.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
