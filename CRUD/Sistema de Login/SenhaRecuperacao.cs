@@ -5,6 +5,9 @@ using System.Windows.Forms;
 
 namespace CRUD.Sistema_de_Login {
     public partial class SenhaRecuperacao : Form {
+        public string nome{ get; private set; }
+        public string usuario { get; private set; }
+        public string email { get; private set; }
         CodigoRecuperacao cr;
         EmailSender es = new EmailSender();
         DateTime _startTime;
@@ -13,17 +16,29 @@ namespace CRUD.Sistema_de_Login {
             InitializeComponent();
         }
 
+        public SenhaRecuperacao(string nome, string usuario, string email) {
+            this.nome = nome;
+            this.usuario = usuario;
+            this.email = email;
+        }
+
         private void SenhaRecuperacao_Load(object sender, EventArgs e) {
             cr = new CodigoRecuperacao();
         }
 
         private void btnEnviar_Click(object sender, EventArgs e) {
+            nome = txtNomeRecupera.Text;
+            usuario = txtNomeUsuarioRecupera.Text;
+            email = txtEmailRecupera.Text;
+
             if (txtEmailRecupera.Text == string.Empty) {
                 MessageBox.Show("Digite um e-mail", "Erro | Enviar E-mail Recuperação", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
             }
             else {
-                es.SetarNome(txtNomeRecupera.Text);
-                es.SetarEmail(txtEmailRecupera.Text);
+                es.SetarNome(nome);
+                es.SetarEmail(email);
+                es.SetarNomeUsuario(usuario);
+                
 
                 try {
                     es.EnviarEmailRecuperacao();
@@ -57,6 +72,11 @@ namespace CRUD.Sistema_de_Login {
             if(txtCodigoRecupera.Text == es.CodigoSecreto) {
                 TempoParaRecuperar.Stop();
                 MessageBox.Show("Código correto, você será redirecionado para a tela de recuperação!", "Aviso | Recupera Senha", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                AlterarSenha alterarSenha = new AlterarSenha();
+                alterarSenha.Show();
+            }
+            else {
+                MessageBox.Show("Código errado, tente novamente", "Aviso | Recupera Senha", MessageBoxButtons.RetryCancel, MessageBoxIcon.Hand);
             }
         }
     }

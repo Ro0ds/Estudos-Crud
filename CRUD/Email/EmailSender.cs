@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 namespace CRUD.Email {
     class EmailSender {
         public string DestinatarioNome { get; private set; }
+        public string DestinatarioNomeUsuario { get; private set; }
         public string DestinatarioEmail { get; private set; }
         public string CodigoSecreto { get; private set; }
         public MailAddress DoEmail { get; set; }
@@ -27,6 +28,10 @@ namespace CRUD.Email {
 
         public void SetarNome(string nome) {
             DestinatarioNome = nome;
+        }
+
+        public void SetarNomeUsuario(string nomeUser) {
+            DestinatarioNomeUsuario = nomeUser;
         }
 
         public string PegarNome() {

@@ -11,7 +11,7 @@ namespace CRUD.Sistema_de_Login {
         DatabaseInternal DBInternal;
         DatabaseInfo DBInfo;
         VerificacaoConfig vConf = new VerificacaoConfig();
-        bool isActive = false;
+        private bool isActive = false;
         string CheckStatus, conn;
 
         public LoginCadastro() {
