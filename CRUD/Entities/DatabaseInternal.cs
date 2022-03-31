@@ -2,7 +2,7 @@
 
 namespace CRUD {
     class DatabaseInternal {
-        //COMEÇO BANCO CRUD//
+        //--------------COMEÇO BANCO CRUD--------------//
         public int      CID { get; set; }
         public string   CNome { get; set; }
         public string   CNascimento { get; set; }
@@ -10,9 +10,9 @@ namespace CRUD {
         public string   CEmail { get; set; }
         public string   CTelefone { get; set; }
         public string   CGenero { get; set; }
-        //FIM BANCO CRUD//
+        //--------------FIM BANCO CRUD--------------//
 
-        //COMEÇO BANCO USUÁRIOS//
+        //--------------COMEÇO BANCO USUÁRIOS--------------//
         public int      LID { get; set; }
         public string   LNome { get; set; }
         public string   LNomeUsuario { get; private set; }
@@ -20,10 +20,11 @@ namespace CRUD {
         public string   LEmailUsuario { get; private set; }
         public string   LDicaSenhaUsuario { get; set; }
         public string   LStatusUsuario { get; set; }
-        //FIM BANCO USUÁRIOS//
+        //--------------FIM BANCO USUÁRIOS--------------//
 
         public DatabaseInternal() { }
 
+        //--------------COMEÇO BANCO CRUD--------------//
         public DatabaseInternal(string cNome, string cNascimento, string cNacionalidade, string cEmail, string cTelefone, string cGenero) {
             this.CNome =             cNome;
             this.CNascimento =       cNascimento;
@@ -32,7 +33,9 @@ namespace CRUD {
             this.CTelefone =         cTelefone;
             this.CGenero =           cGenero;
         }
+        //--------------FIM BANCO CRUD--------------//
 
+        //--------------COMEÇO BANCO USUÁRIOS--------------//
         public DatabaseInternal(int lID, string lNome, string lNomeUsuario, string lSenhaUsuario, string lEmailUsuario, string lDicaSenhaUsuario, string lStatusUsuario) {
             this.LID =               lID;
             this.LNome =             lNome;
@@ -44,11 +47,17 @@ namespace CRUD {
         }
 
         public DatabaseInternal(string lNome, string lNomeUsuario, string lSenhaUsuario, string lEmailUsuario, string lDicaSenhaUsuario) {
-            this.LNome = lNome;
-            this.LNomeUsuario = lNomeUsuario;
-            this.LSenhaUsuario = lSenhaUsuario;
-            this.LEmailUsuario = lEmailUsuario;
+            this.LNome =             lNome;
+            this.LNomeUsuario =      lNomeUsuario;
+            this.LSenhaUsuario =     lSenhaUsuario;
+            this.LEmailUsuario =     lEmailUsuario;
             this.LDicaSenhaUsuario = lDicaSenhaUsuario;
+        }
+
+        public DatabaseInternal(string lNome, string lNomeUsuario, string lEmailUsuario) {
+            this.LNome =         lNome;
+            this.LNomeUsuario =  lNomeUsuario;
+            this.LEmailUsuario = LEmailUsuario;
         }
        
         public DatabaseInternal(string lStatusUsuario) {
@@ -71,5 +80,6 @@ namespace CRUD {
         public void AlterarLEmail(string lEmail) {
             LEmailUsuario = lEmail;
         }
+        //--------------FIM BANCO USUÁRIOS--------------//
     }
 }

@@ -14,7 +14,7 @@ namespace CRUD.Sistema_de_Login {
         VerificacaoConfig vConf = new VerificacaoConfig();
         DialogResult dg;
         readonly string cName = "CRUD.Properties.Settings.CRUDConnectionString";
-        string conn;
+        public string conn { get; set; }
 
         /* 
          * IDENTIFICAÇÃO DOS CÓDIGOS NA LISTA
@@ -211,6 +211,8 @@ namespace CRUD.Sistema_de_Login {
 
         private void lblEsqueceuSenha_Click(object sender, EventArgs e) {
             SenhaRecuperacao SR = new SenhaRecuperacao();
+            SR.Width = 322;
+            SR.Height = 283;
             SR.Show();
         }
     }
