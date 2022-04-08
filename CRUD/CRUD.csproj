@@ -63,6 +63,12 @@
     <Compile Include="Entities\AppSetting.cs" />
     <Compile Include="Entities\DatabaseInfo.cs" />
     <Compile Include="Entities\DatabaseInternal.cs" />
+    <Compile Include="LocacaoCarros\MenuPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LocacaoCarros\MenuPrincipal.Designer.cs">
+      <DependentUpon>MenuPrincipal.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,6 +95,9 @@
     <Compile Include="Sistema de Login\SenhaRecuperacao.Designer.cs">
       <DependentUpon>SenhaRecuperacao.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="LocacaoCarros\MenuPrincipal.resx">
+      <DependentUpon>MenuPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
