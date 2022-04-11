@@ -63,11 +63,41 @@
     <Compile Include="Entities\AppSetting.cs" />
     <Compile Include="Entities\DatabaseInfo.cs" />
     <Compile Include="Entities\DatabaseInternal.cs" />
-    <Compile Include="LocacaoCarros\MenuPrincipal.cs">
+    <Compile Include="LocacaoCarros\MCarros.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LocacaoCarros\MenuPrincipal.Designer.cs">
-      <DependentUpon>MenuPrincipal.cs</DependentUpon>
+    <Compile Include="LocacaoCarros\MCarros.Designer.cs">
+      <DependentUpon>MCarros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LocacaoCarros\MFidelidade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LocacaoCarros\MFidelidade.Designer.cs">
+      <DependentUpon>MFidelidade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LocacaoCarros\MMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LocacaoCarros\MMain.Designer.cs">
+      <DependentUpon>MMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LocacaoCarros\MPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LocacaoCarros\MPrincipal.Designer.cs">
+      <DependentUpon>MPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LocacaoCarros\MPerfil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LocacaoCarros\MPerfil.Designer.cs">
+      <DependentUpon>MPerfil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LocacaoCarros\MSobre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LocacaoCarros\MSobre.Designer.cs">
+      <DependentUpon>MSobre.cs</DependentUpon>
     </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
@@ -95,8 +125,23 @@
     <Compile Include="Sistema de Login\SenhaRecuperacao.Designer.cs">
       <DependentUpon>SenhaRecuperacao.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="LocacaoCarros\MenuPrincipal.resx">
-      <DependentUpon>MenuPrincipal.cs</DependentUpon>
+    <EmbeddedResource Include="LocacaoCarros\MCarros.resx">
+      <DependentUpon>MCarros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocacaoCarros\MFidelidade.resx">
+      <DependentUpon>MFidelidade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocacaoCarros\MMain.resx">
+      <DependentUpon>MMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocacaoCarros\MPrincipal.resx">
+      <DependentUpon>MPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocacaoCarros\MPerfil.resx">
+      <DependentUpon>MPerfil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocacaoCarros\MSobre.resx">
+      <DependentUpon>MSobre.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
@@ -153,6 +198,20 @@
   <ItemGroup>
     <None Include="Sistema de Login\register.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="images\house icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\sofa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\car.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\fidelidade.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\user.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,6 +1,6 @@
 ﻿
 namespace CRUD.LocacaoCarros {
-    partial class MenuPrincipal {
+    partial class MFidelidade {
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -26,15 +26,14 @@ namespace CRUD.LocacaoCarros {
         private void InitializeComponent() {
             this.SuspendLayout();
             // 
-            // MenuPrincipal
+            // MFidelidade
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1126, 745);
-            this.Name = "MenuPrincipal";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "MenuPrincipal";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(934, 745);
+            this.Name = "MFidelidade";
+            this.Text = "Fidelidade";
             this.ResumeLayout(false);
 
         }

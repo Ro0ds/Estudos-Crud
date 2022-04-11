@@ -47,7 +47,6 @@ namespace CRUD.Sistema_de_Login {
                 es.SetarEmail(email);
                 es.SetarNomeUsuario(usuario);
 
-
                 try {
                     es.EnviarEmailRecuperacao();
                     _startTime = DateTime.Now;

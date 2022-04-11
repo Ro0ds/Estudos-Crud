@@ -9,8 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CRUD.LocacaoCarros {
-    public partial class MenuPrincipal : Form {
-        public MenuPrincipal() {
+    public partial class MPerfil : Form {
+        public MPerfil() {
             InitializeComponent();
         }
     }
